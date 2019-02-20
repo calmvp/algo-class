@@ -9,7 +9,7 @@ namespace Queue
             Queue<string> queue = new Queue<string>();
             while (true)
             {
-                Console.WriteLine("Enter 1 to add a new name to the queue, or 2 to dequeue the next customer");
+                Console.WriteLine("Enter 1 to add a new name to the queue, 2 to dequeue the next customer, or 3 to view the queue list");
                 string entry = Console.ReadLine();
                 if (entry == "" || entry.ToLower() == "exit")
                 {
@@ -26,7 +26,12 @@ namespace Queue
                 if (entry == "2")
                 {
                     var next = queue.Dequeue();
-                    Console.Write($"{next} has been dequeued");
+                    Console.WriteLine($"{next} has been dequeued");
+                }
+
+                if (entry == "3")
+                {
+                    Console.WriteLine(queue.ToString());
                 }
             }
         }

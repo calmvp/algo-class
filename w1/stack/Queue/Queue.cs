@@ -25,5 +25,26 @@ namespace Queue
         {
             _queueList.AddToTail(element);
         }
+
+        public override string ToString()
+        {
+            var output = string.Empty;
+
+            Node node = _queueList.Head;
+            while (node != null)
+            {
+                if (node == _queueList.Head)
+                {
+                    output = $"{node.Value}";
+                }
+                else
+                {
+                    output = output + $", {node.Value}";
+                }
+                node = node.Next;
+            }
+
+            return output;
+        }
     }
 }
